@@ -1,6 +1,6 @@
 "use client"
 
-import { Card, CardHeader, Avatar, Button } from "@nextui-org/react";
+import { Card, CardHeader, Avatar, Button } from "nextui-org/react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
