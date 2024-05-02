@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Card, CardHeader, Avatar, Button } from "nextui-org/react";
+import { Card, CardHeader, Avatar, Button } from "@nextui-org/react";
 import { motion } from "framer-motion";
 
 const breatheAnimation = {
