@@ -1,6 +1,6 @@
 "use client"
 import { ArrowLeftFromLine, ArrowRightFromLine } from "lucide-react";
-import SideBarMessage from "/components/SideBarMessage";
+import SideBarMessage from "/components/sidebarMessage";
 import { Button } from "/components/ui/button";
 import { useDashboardSidebar } from "@/store/use-dashboard-sidebar";
 
