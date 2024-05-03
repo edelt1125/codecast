@@ -27,7 +27,7 @@ const Home = () => {
     { id: 1, title: "Java", image: "/pics/java.png", description: "Learn the basics of Java programming language."},
     { id: 2, title: "Python", image: "/pics/python.png", description: "Learn the basics of Python programming language" },
     { id: 3, title: "PHP", image: "/pics/php.png", description: "Learn the basics of PHP programming language" },
-    { id: 4, title: "Ruby", image: "/pics/ruby.png", description: "Everything you want to know about Ruby!" },
+    { id: 4, title: "Ruby", image: "/pics/Ruby.png", description: "Everything you want to know about Ruby!" },
     { id: 5, title: "C++", image: "/pics/c++.png", description: "Follow this comprehensive track to kickstart your career with c++." },
     { id: 6, title: "SQL", image: "/pics/sql.png", description: "Everything you want to know about SQL!" },
     { id: 7, title: "Dart", image: "/pics/dart.png", description: "Learn the basics of Dart programming language" },
