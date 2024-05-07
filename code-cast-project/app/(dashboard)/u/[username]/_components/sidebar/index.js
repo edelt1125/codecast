@@ -1,8 +1,8 @@
-import Navigation from "./navigation";
 import Toggle from "./toggle";
 import CategoriesButton from "./categoriesButton";
 import HomepageButton from "./homepageButton";
 import Wrapper from "./wrapper";
+import CommunityButton from "./communityButton";
 
 function Sidebar() {
 
@@ -11,7 +11,7 @@ function Sidebar() {
              <Toggle/>
              <HomepageButton/>
              <CategoriesButton/>
-             <Navigation/>
+             <CommunityButton/>
         </Wrapper>
     )
 }
