@@ -67,7 +67,7 @@ function DashboardPage() {
       <LiveKitStream
         room={user?.username + "'s stream"}
         isLive={isLive}
-        style={{ width: '1000px', height: '400px' }}
+        style={{ width: '1000px', height: '500px' }}
       />
       <div className={ isLive? 'flex justify-center items-center space-x-4 mt-10 w-full ml-96': `flex justify-center items-center space-x-4 mt-10 w-full`}>
         {!isLive && (

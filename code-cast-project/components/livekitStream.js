@@ -20,7 +20,7 @@ export default function LiveKitStream({ room, style, isLive }) {
     display: 'flex',
     flex: 1,
     width: isFullscreen ? '100vw' : 'auto', // Fullscreen width
-    height: isFullscreen ? '85vh' : 'auto', // Fullscreen height
+    height: isFullscreen ? '95vh' : 'auto', // Fullscreen height
     position: isFullscreen ? 'fixed' : 'relative',
     top: isFullscreen ? 0 : 'auto',
     left: isFullscreen ? 0 : 'auto',

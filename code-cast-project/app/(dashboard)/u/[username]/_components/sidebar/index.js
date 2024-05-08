@@ -3,6 +3,7 @@ import CategoriesButton from "./categoriesButton";
 import HomepageButton from "./homepageButton";
 import Wrapper from "./wrapper";
 import CommunityButton from "./communityButton";
+import FriendsButton from "./friendsButton";
 
 function Sidebar() {
 
@@ -11,6 +12,7 @@ function Sidebar() {
              <Toggle/>
              <HomepageButton/>
              <CategoriesButton/>
+             <FriendsButton/>
              <CommunityButton/>
         </Wrapper>
     )
