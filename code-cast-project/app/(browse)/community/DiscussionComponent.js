@@ -1,27 +1,25 @@
+"use client"
+
 import React, { useState, useEffect } from 'react';
 import { useUser } from "@clerk/clerk-react";
 import Link from 'next/link';
 
 const DiscussionComponent = () => {
 
-  const { isLoaded, user } = useUser();
+  const { user } = useUser();
 
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState('');
 
   useEffect(() => {
-    const fetchComments = async () => {
-      const response = await fetch('/api/commentsAPI');
-      const data = await response.json();
-      setComments(data);
-    };
-    fetchComments();
-  }, []);
+    async function fetchComments() {
+        const response = await fetch(`/api/commentsAPI`);
+        const data = await response.json();
+        setComments(data);
+    }
 
-  if (!isLoaded) {
-    // Handle loading state however you like
-    return null;
-  }
+    fetchComments();
+}, []);
 
   const handleCommentChange = (event) => {
     setNewComment(event.target.value);

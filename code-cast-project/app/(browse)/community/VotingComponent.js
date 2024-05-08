@@ -1,16 +1,19 @@
+"use client"
+
 import React, { useState, useEffect } from 'react';
 
 const VotingComponent = () => {
   const [topics, setTopics] = useState([]);
 
   useEffect(() => {
-    const fetchTopics = async () => {
-      const response = await fetch('/api/fetchTopics');
-      const data = await response.json();
-      setTopics(data);
-    };
+    async function fetchTopics() {
+        const response = await fetch(`/api/fetchTopics`);
+        const data = await response.json();
+        setTopics(data);
+    }
+
     fetchTopics();
-  }, []);
+}, []);
 
 
   const handleVote = async (id) => {
