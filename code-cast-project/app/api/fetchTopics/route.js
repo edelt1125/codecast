@@ -1,3 +1,5 @@
+"use server"
+
 const { db } = require("@/lib/db");
 
 export async function GET(req) {
