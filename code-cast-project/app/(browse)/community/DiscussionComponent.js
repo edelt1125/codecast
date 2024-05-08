@@ -1,16 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useUser } from "@clerk/clerk-react";
 import Link from 'next/link';
-import { currentUser } from '@clerk/nextjs';
 
 const DiscussionComponent = () => {
 
   const { isLoaded, user } = useUser();
-
-  if (!isLoaded) {
-    // Handle loading state however you like
-    return null;
-  }
 
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState('');
@@ -23,6 +17,11 @@ const DiscussionComponent = () => {
     };
     fetchComments();
   }, []);
+
+  if (!isLoaded) {
+    // Handle loading state however you like
+    return null;
+  }
 
   const handleCommentChange = (event) => {
     setNewComment(event.target.value);
@@ -79,8 +78,8 @@ const DiscussionComponent = () => {
       <h2 className='text-white font-bold text-lg my-6'>Forum:</h2>
       <ul className='text-white font-thin my-4 space-y-4'>
         {comments.map((comment, index) => (
-          <div className='border rounded-sm w-fit h-16 flex items-center'>
-            <li key={index} className='mx-2 flex justify-center items-center'>
+          <div key={index} className='border rounded-sm w-fit h-16 flex items-center'>
+            <li className='mx-2 flex justify-center items-center'>
               <Link href={`/${user.username}`}><button className='border-[3px] rounded-full border-blue-400'><img src={user.imageUrl} width={30} height={30} className='rounded-full' /></button></Link>
               <span className='mx-2'>{user.fullName} - {comment.text}</span> <span className="text-gray-400"> on {comment.timestamp}</span>
             </li>
