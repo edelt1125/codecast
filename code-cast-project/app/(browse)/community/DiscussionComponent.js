@@ -11,7 +11,7 @@ const DiscussionComponent = () => {
 
   useEffect(() => {
     const fetchComments = async () => {
-      const response = await fetch('/api/commentsAPI', { cache: 'no-store' });
+      const response = await fetch('/api/commentsAPI');
       const data = await response.json();
       setComments(data);
     };
@@ -44,8 +44,7 @@ const DiscussionComponent = () => {
         // Log the body content
         console.log('Sending POST request with body:', requestBody);
 
-        const response = await fetch('/api/postComment', { cache: 'no-store' },
-        {
+        const response = await fetch('/api/postComment', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: requestBody
