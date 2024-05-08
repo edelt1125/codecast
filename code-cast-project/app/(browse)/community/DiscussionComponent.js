@@ -1,12 +1,10 @@
-"use client"
-
 import React, { useState, useEffect } from 'react';
 import { useUser } from "@clerk/clerk-react";
 import Link from 'next/link';
 
 const DiscussionComponent = () => {
 
-  const { user } = useUser();
+  const { isLoaded, user } = useUser();
 
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState('');
@@ -20,6 +18,11 @@ const DiscussionComponent = () => {
 
     fetchComments();
 }, []);
+
+  if (!isLoaded) {
+    // Handle loading state however you like
+    return null;
+  }
 
   const handleCommentChange = (event) => {
     setNewComment(event.target.value);
