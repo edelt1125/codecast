@@ -17,6 +17,7 @@ export async function POST(req) {
       status: 201,
       headers: {
         'Content-Type': 'application/json',
+        'Cache-Control': 'no-cache, no-store, must-revalidate',
       },
     });
   } catch (error) {
