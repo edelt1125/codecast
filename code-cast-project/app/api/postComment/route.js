@@ -1,14 +1,10 @@
-
-
-import { PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient();
+const { db } = require("@/lib/db");
 
 export async function POST(req) {
   const { text, userId, timestamp } = await req.json();
 
   try {
-    const comment = await prisma.comment.create({
+    const comment = await db.comment.create({
       data: {
         text,
         user: { connect: { externalUserId: userId } }, // Ensure the schema matches: It might be `user: { connect: { id: userId } }`

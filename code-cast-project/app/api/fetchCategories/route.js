@@ -1,12 +1,8 @@
-// --->    /api/categories/route.js
-import { PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient();
+const { db } = require("@/lib/db");
 
 export async function GET(req) {
   // search for all categories in our db
-  const categories = await prisma.category.findMany();
-  // for debugging ---> console.log(categories);
+  const categories = await db.category.findMany();
   return new Response(JSON.stringify(categories), {
     status: 200,
     headers: {

@@ -1,7 +1,4 @@
-// --> /api/fetchStreams/route.js
-import { PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient();
+const { db } = require("@/lib/db");
 
 export async function GET(req) {
   try {
@@ -15,7 +12,7 @@ export async function GET(req) {
     console.log(categoryName);
     
     // search db for live streams under category 
-    const liveStreams = await prisma.stream.findMany({
+    const liveStreams = await db.stream.findMany({
       where: {
         category: {
           name: categoryName,

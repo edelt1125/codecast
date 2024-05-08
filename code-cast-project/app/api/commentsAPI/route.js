@@ -1,11 +1,7 @@
-// app/api/fetchComments/route.js
-
-import { PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient();
+const { db } = require("@/lib/db");
 
 export async function GET(req) {
-    const comments = await prisma.comment.findMany({
+    const comments = await db.comment.findMany({
     include: {
       user: true,
     },

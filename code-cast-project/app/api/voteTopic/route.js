@@ -1,13 +1,11 @@
-import { PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient();
+const { db } = require("@/lib/db");
 
 export async function POST(req) {
 
   const { id } = await req.json();
 
   try {
-    const vote = await prisma.topics.update({
+    const vote = await db.topics.update({
         where: { id },
         data: { votes: { increment: 1 } }
     });
