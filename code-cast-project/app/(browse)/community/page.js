@@ -1,5 +1,3 @@
-"use client"
-
 import React from 'react';
 import  VotingComponent  from "./VotingComponent";
 import DiscussionComponent from "./DiscussionComponent";

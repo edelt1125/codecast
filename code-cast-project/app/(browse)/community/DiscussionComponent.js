@@ -11,11 +11,7 @@ const DiscussionComponent = () => {
 
   useEffect(() => {
     async function fetchComments() {
-        const response = await fetch(`/api/commentsAPI`, {
-          headers: {
-            'Cache-Control': 'no-cache'
-          }
-        });
+        const response = await fetch(`/api/commentsAPI`);
         const data = await response.json();
         setComments(data);
     }

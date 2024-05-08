@@ -5,11 +5,7 @@ const VotingComponent = () => {
 
   useEffect(() => {
     async function fetchTopics() {
-        const response = await fetch(`/api/fetchTopics`, {
-          headers: {
-            'Cache-Control': 'no-cache'
-          }
-        });
+        const response = await fetch(`/api/fetchTopics`);
         const data = await response.json();
         setTopics(data);
     }
