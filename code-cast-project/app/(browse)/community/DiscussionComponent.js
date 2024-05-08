@@ -49,10 +49,9 @@ const DiscussionComponent = () => {
           headers: { 'Content-Type': 'application/json' },
           body: requestBody
         });
-        console.log(currentDateTime);
-        const data = await response.json(); // Assuming your server responds with the newly created comment
+        const data = await response.json(); 
         if (response.ok) {
-          setComments(prevComments => [data, ...prevComments]); // Assuming 'data' is the new comment object returned from the server
+          setComments(prevComments => [data, ...prevComments]); 
           setNewComment('');
         } else {
           throw new Error(data.message || 'Failed to submit comment');
