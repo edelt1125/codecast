@@ -1,12 +1,9 @@
 "use client"
 
 import React, { useState, useEffect } from 'react';
-import { useUser } from "@clerk/clerk-react";
 import Link from 'next/link';
 
 const DiscussionComponent = () => {
-
-  const { isLoaded, user } = useUser();
 
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState('');
@@ -21,10 +18,6 @@ const DiscussionComponent = () => {
     fetchComments();
 }, []);
 
-  if (!isLoaded) {
-    // Handle loading state however you like
-    return null;
-  }
 
   const handleCommentChange = (event) => {
     setNewComment(event.target.value);
@@ -82,8 +75,8 @@ const DiscussionComponent = () => {
         {comments.map((comment, index) => (
           <div key={index} className='border rounded-sm w-fit h-16 flex items-center'>
             <li className='mx-2 flex justify-center items-center'>
-              <Link href={`/${user.username}`}><button className='border-[3px] rounded-full border-blue-400'><img src={user.imageUrl} width={30} height={30} className='rounded-full' /></button></Link>
-              <span className='mx-2'>{user.fullName} - {comment.text}</span> <span className="text-gray-400"> on {comment.timestamp}</span>
+              <Link href={`/${comment.user.username}`}><button className='border-[3px] rounded-full border-blue-400'><img src={comment.user.imageUrl} width={30} height={30} className='rounded-full' /></button></Link>
+              <span className='mx-2'>{comment.user.username} - {comment.text}</span> <span className="text-gray-400"> on {comment.timestamp}</span>
             </li>
           </div>
         ))}
