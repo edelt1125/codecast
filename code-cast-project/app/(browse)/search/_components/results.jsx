@@ -6,7 +6,7 @@ export const Results = async ({ term }) => {
 
   return (
     <div>
-      <h2 className="text-lg font-semibold mb-4">
+      <h2 className="text-lg font-semibold mb-4 text-white">
       Results for search: &quot;{term}&quot;
       </h2>
       {data.length === 0 && (

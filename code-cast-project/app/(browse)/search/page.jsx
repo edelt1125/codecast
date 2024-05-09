@@ -9,7 +9,7 @@ const SearchPage = ({ searchParams }) => {
   }
 
   return (
-    <div className="h-full p-8 max-w-screen-2xl mx-auto">
+    <div className="h-full p-8 max-w-screen-2xl mx-auto bg-gray-900">
       <Results term={searchParams.term}/>
     </div>
   );
