@@ -12,7 +12,7 @@ export async function POST(req) {
         data: { votes: { increment: 1 } }
     });
 
-    await revalidatePath("/community"); // Replace with the actual path to your comments page
+    revalidatePath("/community"); // Replace with the actual path to your comments page
     console.log("Revalidated /comments");
 
     return new Response(JSON.stringify(vote), {

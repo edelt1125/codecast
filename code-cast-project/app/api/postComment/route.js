@@ -15,7 +15,7 @@ export async function POST(req) {
     });
 
     // Revalidate the path where comments are displayed
-    await revalidatePath("/community"); // Replace with the actual path to your comments page
+    revalidatePath("/community"); // Replace with the actual path to your comments page
     console.log("Revalidated /comments");
 
 
