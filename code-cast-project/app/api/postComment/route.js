@@ -13,6 +13,12 @@ export async function POST(req) {
         timestamp,
       }
     });
+
+    // Revalidate the path where comments are displayed
+    await revalidatePath("/comments"); // Replace with the actual path to your comments page
+    console.log("Revalidated /comments");
+
+    
     return new Response(JSON.stringify(comment), {
       status: 201,
       headers: {
